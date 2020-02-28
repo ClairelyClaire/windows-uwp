@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: 
 description: This article shows you how to capture video from multiple sources simulataneously to a single file with multiple embedded video tracks.
 title: Capture from multiple sources using MediaFrameSourceGroup
-ms.author: drewbat
 ms.date: 09/12/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, capture, video
 ms.localizationpriority: medium
 ---
-
 # Capture from multiple sources using MediaFrameSourceGroup
 
 This article shows you how to capture video from multiple sources simultaneously to a single file with multiple embedded video tracks. Starting with RS3, you can specify multiple **[VideoStreamDescriptor](https://docs.microsoft.com/uwp/api/windows.media.core.videostreamdescriptor)** objects for a single **[MediaEncodingProfile](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile)**. This enables you to encode multiple streams simultaneously to a single file. The video streams that are encoded in this operation must be included in a single **[MediaFrameSourceGroup](https://docs.microsoft.com/uwp/api/windows.media.capture.frames.mediaframesourcegroup)** which specifies a set of cameras on the current device that can be used at the same time. 
@@ -55,7 +50,7 @@ The following example shows how to intialize a **TimedMetadataStreamDescriptor**
 
 [!code-cs[GetStreamDescriptor](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetStreamDescriptor)]
 
-Call [MediaEncodingProfile.SetTimedMetadataTracks](**https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks**) to add the metadata stream descriptor to the encoding profile. The following example shows a helper method that takes two video stream descriptors, one audio stream descriptor, and one timed metadata stream descriptor and returns a **MediaEncodingProfile** that can be used to encode the streams.
+Call [**MediaEncodingProfile.SetTimedMetadataTracks**](https://docs.microsoft.com/uwp/api/windows.media.mediaproperties.mediaencodingprofile.settimedmetadatatracks) to add the metadata stream descriptor to the encoding profile. The following example shows a helper method that takes two video stream descriptors, one audio stream descriptor, and one timed metadata stream descriptor and returns a **MediaEncodingProfile** that can be used to encode the streams.
 
 [!code-cs[GetMediaEncodingProfile](./code/SimpleCameraPreview_Win10/cs/MainPage.MultiRecord.xaml.cs#SnippetGetMediaEncodingProfile)]
 

@@ -1,17 +1,12 @@
 ---
-author: mcleanbyron
 description: Learn how to use the app metadata REST API to access certain types metadata for apps. This API is intended to be used by advertising networks to retrieve information about apps in the Microsoft Store so they can improve how they sell ad space to advertisers.
 title: App metadata API for advertising networks
-ms.author: mcleans
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, advertising network, app metadata
 ms.assetid: f0904086-d61f-4adb-82b6-25968cbec7f3
 ms.localizationpriority: medium
 ---
-
 # App metadata API for advertising networks
 
 Advertising networks can use the *app metadata API* to programmatically retrieve metadata about apps in the Microsoft Store, including details such as the description and category for the Store listing of the app and whether the app is targeted to children under 13. Access to this API is currently restricted to developers who are granted permission to the API by Microsoft.
@@ -133,8 +128,8 @@ For more details about the values in the response body, see the following table.
 | phoneStoreGuid           | string  | The Product ID (Windows Phone 8.x) for the app. This is a GUID.  |
 | windowsStoreGuid           | string  | The Product ID (Windows 8.x) for the app. This is a GUID. |
 | storeCategory           | string  | The category for the app in the Store. For the supported values, see the [category and subcategory table](../publish/category-and-subcategory-table.md) for apps in the Store.  |
-| iabCategory           | string  | The content category for the app as defined by the Interactive Advertising Bureau (IAB). For example, **News** or **Sports**. For a list of content categories, see the [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy) page on the IAB web site.   |
-| iabCategoryId           | string  | The ID of the content category for the app. For example, **IAB12** is the ID for the News category, and **IAB17** is the ID for the Sports category. For a list of content category IDs, see section 5.1 in the [OpenRTB API Specification](http://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf). |
+| iabCategory           | string  | The content category for the app as defined by the Interactive Advertising Bureau (IAB). For example, **News** or **Sports**. For a list of content categories, see the [IAB Tech Lab Content Taxonomy](https://www.iab.com/guidelines/iab-quality-assurance-guidelines-qag-taxonomy/) page on the IAB web site.   |
+| iabCategoryId           | string  | The ID of the content category for the app. For example, **IAB12** is the ID for the News category, and **IAB17** is the ID for the Sports category. For a list of content category IDs, see section 5.1 in the [OpenRTB API Specification](https://www.iab.com/wp-content/uploads/2015/05/OpenRTB_API_Specification_Version_2_3_1.pdf). |
 | coppa           | Boolean  | True if the app is directed at children under the age of 13 and therefore has obligations under the Children's Online Privacy Protection Act (COPPA); otherwise, false.  |
 | downloadUrl           | string  | The link to the app's listing in the Store. This link is in the format ```https://www.microsoft.com/store/apps/<Store ID>```.  |
 | isLive           | Boolean  | True if the app is currently available in the Store; otherwise, false.  |

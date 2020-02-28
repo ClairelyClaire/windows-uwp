@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: Camera Barcode Scanner Symbologies
 description: Camera Barcode Scanner Supported Symbologies
-ms.author: jken
-ms.date: 05/1/2018
+ms.date: 05/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Symbologies
 This topic provides sample barcodes for each of the symbologies supported by the software barcode decoder that ships with Windows 10, including: UPC/EAN, Code 39, Code 128, Interleaved 2 of 5, Databar Omnidirectional, Databar Stacked, QR Code and GS1DWCode.
 
@@ -55,3 +50,9 @@ Scan the image of a package below with your camera barcode scanner application t
 
 > [!NOTE]
 > The software decoder built into Windows 10 is provided courtesy of  [*Digimarc Corporation*](https://www.digimarc.com/)
+
+## See also
+
+### Samples
+
+- [Barcode scanner sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/BarcodeScanner)

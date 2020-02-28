@@ -1,36 +1,44 @@
 ---
-author: jwmsft
 Description: Learn how Fluent motion uses directionality and gravity.
 title: Directionality and gravity - animation in UWP apps
 label: Directionality and gravity
 template: detail.hbs
-ms.author: jimwalk
-ms.date: 05/19/2017
+ms.date: 10/02/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
 doc-status: Draft
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Directionality and gravity
-
-> [!IMPORTANT]
-> This article describes functionality that hasn’t been released yet and may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.
 
 Directional signals help to solidify the mental model of the journey a user takes across experiences. It is important that the direction of any motion support both the continuity of the space as well as the integrity of the objects in the space.
 
 ​Directional movement is subject to forces like gravity. Applying forces to movement reinforces the natural feel of the motion.​
 
+## Examples
+
+<table>
+<tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="XAML controls gallery" width="168"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/category/Motion">open the app and see Motion in action</a>.</p>
+    <ul>
+    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+
 ## Direction of movement​
 
 :::row:::
     :::column:::
-        Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
-
-        When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
+Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
+When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and alway support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​
     :::column-end:::
     :::column:::
         ![direction backward in](images/Direction.gif)
@@ -61,9 +69,8 @@ There are 4 discreet directions of navigation to consider​.
 
 :::row:::
     :::column:::
-        **Forward-In**
-
-        Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
+**Forward-In**
+Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.
     :::column-end:::
     :::column:::
         ![direction forward in](images/forwardIN.gif)
@@ -71,9 +78,8 @@ There are 4 discreet directions of navigation to consider​.
 :::row-end:::
 :::row:::
     :::column:::
-        **Forward-Out**
-
-        Content exits quickly. Objects accelerate off screen.
+**Forward-Out**
+Content exits quickly. Objects accelerate off screen.
     :::column-end:::
     :::column:::
         ![direction forward out](images/forwardOUT.gif)
@@ -81,9 +87,8 @@ There are 4 discreet directions of navigation to consider​.
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-In**
-
-        Same as Forward-In, but reversed.
+**Backward-In**
+Same as Forward-In, but reversed.
     :::column-end:::
     :::column:::
         ![direction backward in](images/backwardIN.gif)
@@ -91,9 +96,8 @@ There are 4 discreet directions of navigation to consider​.
 :::row-end:::
 :::row:::
     :::column:::
-        **Backward-Out**
-
-        Same as Forward-Out, but reversed.
+**Backward-Out**
+Same as Forward-Out, but reversed.
     :::column-end:::
     :::column:::
         ![direction backward out](images/backwardOUT.gif)

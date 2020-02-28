@@ -1,16 +1,11 @@
 ---
-author: TerryWarwick
 title: PointOfService device claim and enable model
 description: Learn about PointOfService claim and enable model
-ms.author: jken
 ms.date: 06/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
 ---
-
 # Point of Service device claim and enable model
 
 ## Claiming for exclusive use
@@ -18,7 +13,7 @@ ms.localizationpriority: medium
 After you have successfully created a PointOfService device object, you must claim it using the appropriate claim method for the device type before you can use the device for input or output.  Claim grants the application exclusive access to many of the device's functions to ensure that one application does not interfere with the use of the device by another application.  Only one application can claim a PointOfService device for exclusive use at a time. 
 
 > [!Note]
-> The claim action establishes an exclusive lock to a device, but does not put it into an operational state.  See [Enable device for I/O operations](#Enable-device-for-I/O-operations) for more information.
+> The claim action establishes an exclusive lock to a device, but does not put it into an operational state.  See [Enable device for I/O operations](#enable-device-for-io-operations) for more information.
 
 ### APIs used to claim / release
 
@@ -43,7 +38,7 @@ The claim action simply establishes an exclusive rights to the device, but does 
 |ClaimedCashDrawer | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedcashdrawer.isenabled) |
 |ClaimedLineDisplay | Not Applicable¹ | Not Applicable¹ | Not Applicable¹ | 
 |ClaimedMagneticStripeReader | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader.isenabled) |  
-|ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasyc) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
+|ClaimedPosPrinter | [EnableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.enableasync) | [DisableAsync](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.disableasync) | [IsEnabled](https://docs.microsoft.com/uwp/api/windows.devices.pointofservice.claimedposprinter.isenabled) |
 |
 
 ¹ Line Display does not require you to explicitly enable the device for I/O operations.  Enabling is performed automatically by the PointOfService LineDisplay APIs which perform I/O.
@@ -80,7 +75,7 @@ This sample shows how to claim a barcode scanner device after you have successfu
 
 > [!Warning]
 > A claim can be lost in the following circumstances:
-> 1. Another app has requested a claim of the same device and your app did not issue a **RetainDevice** in response to the **ReleaseDeviceRequested** event.  (See [Claim negotiation](#Claim-negotiation) below for more information.)
+> 1. Another app has requested a claim of the same device and your app did not issue a **RetainDevice** in response to the **ReleaseDeviceRequested** event.  (See [Claim negotiation](#claim-negotiation) below for more information.)
 > 2. Your app has been suspended, which resulted in the device object being closed and as a result the claim is no longer valid. (See [Device object lifecycle](pos-basics-deviceobject.md#device-object-lifecycle) for more information.)
 
 

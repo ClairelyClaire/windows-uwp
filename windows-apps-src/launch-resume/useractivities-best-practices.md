@@ -1,16 +1,13 @@
 ---
-author: PatrickFarley
 title: User Activities best practices
 description: This guide outlines the recommended practices for creating and updating User Activities.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
-ms.author: pafarley
 ms.date: 08/23/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # User Activities best practices
 
 This guide outlines the recommended practices for creating and updating User Activities. For an overview of the User Activities feature on Windows, see [Continue user activity, even across devices](https://docs.microsoft.com/windows/uwp/launch-resume/useractivities). Or, see the [User Activities section](https://docs.microsoft.com/windows/project-rome/user-activities/) of Project Rome for the implementations of Activities on other development platforms.
@@ -100,7 +97,7 @@ In the following example, the content metadata JSON, following the standards of 
 
 * [User Activities (Project Rome docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
-* [Adaptive cards visualizer, samples](http://adaptivecards.io/)
+* [Adaptive cards visualizer, samples](https://adaptivecards.io/)
 * [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

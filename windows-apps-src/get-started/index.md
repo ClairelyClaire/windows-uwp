@@ -2,21 +2,16 @@
 layout: LandingPage
 description: Get started with the Universal Windows Platform (UWP) and app development for Windows 10.
 title: Get started with the Universal Windows Platform (UWP)
-author: QuinnRadich
-ms.author: quradic
 ms.date: 03/23/2018
-ms.prod: windows
 ms.topic: article
 keywords: get started, windows 10, uwp, xaml, c#
-ms.technology: uwp
+
 ms.localizationpriority: medium
 ---
+# Get started with Windows 10 apps
 
-# Get started with Windows 10 apps 
- 
-Build apps that work on all Windows 10 devices, or enhance your existing apps with new and updated features.  
-<br>
-<ul id="cardtypes-K" class="cardsK panelContent">
+<p>Build apps that work on all Windows 10 devices, or enhance your existing apps with new and updated features.</p>  
+<ul class="cardsK panelContent">
     <li>
         <div class="cardSize">
             <div class="cardPadding">
@@ -78,7 +73,6 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
         </div>
     </li>
 </ul>
-
 <ul class="panelContent cardsF">
   <li>
     <div class="cardSize">
@@ -144,9 +138,6 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
     </div>
   </li>
 </ul>
-
-
-<div class="container">
     <ul class="cardsY panelContent featuredContent">
        <li>
             <a href="//developer.microsoft.com/windows/apps/design">
@@ -204,9 +195,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
         </li>
     </ul>
 </div>
-
----
-
+<hr />
 <ul class="panelContent cardsW">
     <li>
         <div class="cardSize">
@@ -214,6 +203,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                 <div class="card">
                     <div class="cardText">
                         <h3>Developer tools</h3>
+                        <p><a href="https://github.com/Microsoft/WindowsTemplateStudio/">Windows Template Studio</a></p>
                         <p><a href="//docs.microsoft.com/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a></p>
                         <p><a href="//developer.microsoft.com/windows/downloads/virtual-machines">Virtual machines</a></p>
                         <p><a href="//docs.microsoft.com/windows/wsl/about">Bash on Ubuntu on Windows</a></p>
@@ -228,8 +218,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                 <div class="card">
                     <div class="cardText">
                         <h3>New to development?</h3>
-                        <p><a href="//mva.microsoft.com/training-topics/c-app-development">Microsoft Virtual Academy</a></p>
-                        <p><a href="//www.linkedin.com/learning/learning-universal-windows-app-development/welcome">LinkedIn Learning</a></p>
+                        <p><a href="//docs.microsoft.com/learn/browse/?products=windows&resource_type=module">Windows on Microsoft Learn</a></p>
                         </div>
                     </div>
                 </div>
@@ -241,7 +230,7 @@ Build apps that work on all Windows 10 devices, or enhance your existing apps wi
                 <div class="card">
                     <div class="cardText">
                         <h3>Explore related docs</h3>
-                        <p><a href="//docs.microsoft.com/dotnet/csharp/index">C# Guide</a></p>
+                        <p><a href="//docs.microsoft.com/dotnet/csharp/">C# Guide</a></p>
                         <p><a href="//docs.microsoft.com/visualstudio/ide/">Visual Studio</a></p>
                     </div>
                 </div>

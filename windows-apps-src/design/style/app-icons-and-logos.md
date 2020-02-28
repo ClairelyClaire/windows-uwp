@@ -1,26 +1,21 @@
 ---
-author: mijacobs
 Description: How to create app icons/logos that represent your app in the Start menu, app tiles, the taskbar, the Microsoft Store, and more. 
 title: App icons and logos
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 04/17/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 design-contact: Judysa
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 # App icons and logos 
 
 Every app has an icon/logo that represents it, and that icon appears in multiple locations in the Windows shell: 
 
 :::row:::
     :::column:::
-        * The title bar of your app window
         * The app list in the start menu
         * The taskbar and task manager
         * Your app's tiles
@@ -49,7 +44,7 @@ By default, Visual Studio stores your icon assets in an assets subdirectory. Her
 | App icon | App list in start menu, task bar, task manager | Square44x44Logo.png |
 | Splash screen | The app's splash screen | SplashScreen.png  |
 | Badge logo | Your app's tiles | BadgeLogo.png  |
-| Package logo/Store logo | App installer, Dev Center, the "Report an app" option in the Store, the "Write a review" option in the Store | StoreLogo.png  |
+| Package logo/Store logo | App installer, Partner Center, the "Report an app" option in the Store, the "Write a review" option in the Store | StoreLogo.png  |
 
 \* Used unless you choose to [display only uploaded images in the Store](/windows/uwp/publish/app-screenshots-and-images#display-only-uploaded-logo-images-in-the-store). 
 
@@ -58,24 +53,23 @@ To ensure these icons look sharp on every screen, you can create multiple versio
 The  scale factor determines the size of UI elements, such as text. Scale factors range from 100% to 400%. Larger values create larger UI elements, making them easier to see on high-DPI displays. 
 
 :::row:::
-    :::column:::
-        Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
-
-        (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
-    :::column-end:::
-    :::column:::
-        ![](images/icons/display-settings-screen.png)
-    :::column-end:::
+   :::column:::
+      Windows automatically sets the scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. 
+      (Users can override the default value by going to the **Settings &gt; Display &gt; Scale and layout** page.)
+   :::column-end:::
+   :::column:::
+      ![](images/icons/display-settings-screen.png)
+   :::column-end:::
 :::row-end:::  
 
 
-Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. That's a lot of icons! Fortunatly, Visual Studio provides a tool that makes it easy to generate and update these icons. 
+Because app icon assets are bitmaps and bitmaps don't scale well, we recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. That's a lot of icons! Fortunately, Visual Studio provides a tool that makes it easy to generate and update these icons. 
 
 ## Microsoft Store listing image
 
 "How do I specify images for my app's listing in the Microsoft Store?"
 
-By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](https://docs.microsoft.com/en-us/windows/uwp/publish/app-screenshots-and-images)). However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store. (Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.
+By default, we use some of the images from your packages in the Store, as described in the table at the top of this page (along with other [images that you provide during the submission process](https://docs.microsoft.com/windows/uwp/publish/app-screenshots-and-images)). However, you have the option to prevent the Store from using the logo images in your app's packages when displaying your listing to customers on Windows 10 (including Xbox), and instead have the Store use only images that you upload. This gives you more control over your app’s appearance in various displays throughout the Store. (Note that if your product supports earlier OS versions, those customers may still see images from your packages, even if you use this option.) You can do this in the **Store logos** section of the **Store listing** step of the submission process.
 
 ![Specifying Store logos during the app submission process](images/app-icons/storelogodisplay.png)
 
@@ -103,18 +97,18 @@ For more information, see [App screenshots, images, and trailers in the Microsof
 
 Visual Studio provides a very useful tool for managing your app icons called the **Manifest Designer**. 
 
-> If you don't already have Visual Studio 2017, there are several versions available, including a free version, (Visual Studio 2017 Community Edition), and the other versions offer free trials. You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
+> If you don't already have Visual Studio 2019, there are several versions available, including a free version, (Visual Studio 2019 Community Edition), and the other versions offer free trials. You can download them here: [https://developer.microsoft.com/windows/downloads](https://developer.microsoft.com/windows/downloads)
 
 
 To launch the Manifest Designer:
 <!-- 1. Use Visual Studio to open a UWP project.
 2. In the **Solution Explorer**, double-click the package.appmanifest file. 
 
-    ![The Visual Studio 2017 Solution Explorer](images/icons/vs-solution-explorer.png)
+    ![The Visual Studio 2019 Solution Explorer](images/icons/vs-solution-explorer.png)
 
     Visual Studio displays the manifest designer.
 
-    ![The Visual Studio 2017 manifest designer](images/icons/vs-manfiest-designer.png)
+    ![The Visual Studio 2019 manifest designer](images/icons/vs-manfiest-designer.png)
 3. Click the **Visual Assets** tab.
 
     ![The Visual Assets tab](images/icons/vs-manfiest-designer-visual-assets.png) -->
@@ -133,7 +127,7 @@ To launch the Manifest Designer:
         2. In the **Solution Explorer**, double-click the Package.appmxanifest file.
     :::column-end:::
     :::column:::
-        ![The Visual Studio 2017 Manifest Designer](images/icons/vs-solution-explorer.png)
+        ![The Visual Studio 2019 Manifest Designer](images/icons/vs-solution-explorer.png)
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -157,9 +151,9 @@ To launch the Manifest Designer:
 
 The first menu item in the **Visual Assets** tab, **All Visual Assets**, does exactly what its name suggests: generates every visual asset your app needs with the press of a button.
 
-![Generate all visual assets in Visaul Studio](images/app-icons/all-visual-assets.png)
+![Generate all visual assets in Visual Studio](images/app-icons/all-visual-assets.png)
 
-All you need to do is supply a single image, and Visaul Studio will generate the small tile, medium tile, large tile, wide tile, large tile, app icon, splash screen, and package logo assets for every scale factor.
+All you need to do is supply a single image, and Visual Studio will generate the small tile, medium tile, large tile, wide tile, large tile, app icon, splash screen, and package logo assets for every scale factor.
 
 To generate all assets at once:
 1. Click the **...** next to the **Source** field and select the image you want to use. If you're using a bitmap image, make sure it's at least 400 by 400 pixels so that you get sharp results. Vector-based images work best; Visual Studio lets you use AI (Adobe Illustrator) and PDF files. 
@@ -240,6 +234,10 @@ Here are the surfaces that use unplated app icon assets:
 * Task view
 * ALT+TAB
 
+### Unplated assets and themes
+
+The user's selected theme determines the color of the taskbar. If the unplated asset isn't specifically qualified for the current theme, the system checks the asset for contrast. If it has enough contrast with taskbar, the system uses it. Otherwise, the system looks for a high-contrast version of the asset. If it can't find one, the system draws the plated form of the asset instead. 
+
 
 ### Target and unplated sizing
 
@@ -302,6 +300,17 @@ With full-bleed assets, take into account elements that interact within the marg
 In this example, margins are too tight:
 
 ![full bleed tile with margins that are too small](images/assetguidance15.png)
+
+
+## Optimizing for specific themes, languages, and other conditions 
+
+This article described how to create assets for specific scale factors, but you can also create assets for a wide variety of conditions and combinations of conditions. For example, you can can create icons for high contrast displays or for the light themes and dark themes. You can even create assets for specific languages.
+
+For instructions, see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../app-resources/tailor-resources-lang-scale-contrast.md).
+
+
+
+
 
 
 

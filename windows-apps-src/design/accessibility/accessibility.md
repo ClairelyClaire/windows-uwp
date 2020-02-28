@@ -1,29 +1,20 @@
 ---
-author: Xansky
 Description: Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
 title: Accessibility
 label: Accessibility
 template: detail.hbs
-ms.author: mhopkins
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
 # Accessibility  
 
+Accessibility is about building experiences that make your Universal Windows Platform (UWP) application usable by people who use technology in a wide range of environments and approach your UI with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
 
-
-Introduces accessibility concepts that relate to Universal Windows Platform (UWP) apps.
-
-Accessibility is about building experiences that make your application available to people who use technology in a wide range of environments and approach your user interface with a range of needs and experiences. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience. There's also a Microsoft Store declaration regarding accessibility for your app.
-
-> [!NOTE]
-> Declaring the app as accessible is only relevant to the Microsoft Store.
+> There's also a Microsoft Store declaration regarding accessibility for your app!
 
 | Article | Description |
 |---------|-------------|
@@ -43,5 +34,5 @@ Accessibility is about building experiences that make your application available
 | [Control patterns and interfaces](control-patterns-and-interfaces.md) | Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them. |
 
 ## Related topics  
-* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179) 
-* [Get started with Narrator](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started)
+* [**Windows.UI.Xaml.Automation**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Automation) 
+* [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)

@@ -1,16 +1,12 @@
 ---
-author: mijacobs
 title: Screen sizes and break points for responsive design
 description: Rather than optimizing your UI the many devices across the Windows 10 ecosystem, we recommended designing for a few key width categories called breakpoints.
-ms.author: mijacobs
 ms.date: 08/30/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
-
 #  Screen sizes and breakpoints
 
 UWP apps can run on any device running Windows 10, which includes phones, tablets, desktops, TVs, and more. With a huge number of device targets and screen sizes across the Windows 10 ecosystem, rather than optimizing your UI for each device, we recommended designing for a few key width categories (also called "breakpoints"): 
@@ -88,7 +84,7 @@ UWP apps automatically scale your UI to guarantee that your app will be legible 
 - Use up to two columns/regions.
 - Show the search box.
 - Put the [navigation pane](../controls-and-patterns/navigationview.md) into sliver mode so a narrow strip of icons always shows.
-- Consider further tailoring for [TV experiences](http://go.microsoft.com/fwlink/?LinkId=760736).
+- Consider further tailoring for [TV experiences](https://docs.microsoft.com/windows/uwp/design/devices/designing-for-tv?redirectedfrom=MSDN).
 
 ### Large
 - Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.
@@ -98,6 +94,6 @@ UWP apps automatically scale your UI to guarantee that your app will be legible 
 - Put the [navigation pane](../controls-and-patterns/navigationview.md) into docked mode so that it always shows.
 
 >[!TIP] 
-> With [**Continuum for Phones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), users can connect compatible Windows 10 mobile devices to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the size class.
+> With [**Continuum for Phones**](https://docs.microsoft.com/windows-hardware/design/device-experiences/continuum-phone?redirectedfrom=MSDN), users can connect compatible Windows 10 mobile devices to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the size class.
 
 

@@ -1,17 +1,12 @@
 ---
-author: drewbatgit
 ms.assetid: F28162D4-AACC-4EE0-B243-5878F870F87F
 description: Handle system-supported metadata cues during media playback
 title: System-supported timed metadata cues
-ms.author: drewbat
 ms.date: 04/18/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, metadata, cue, speech, chapter
 ms.localizationpriority: medium
 ---
-
 # System-supported timed metadata cues
 This article describes how to take advantage of several formats of timed metadata that may be embedded in media files or streams. UWP apps can register for events that are raised by the media pipeline during playback whenever these metadata cues are encountered. Using the [**DataCue**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.DataCue) class, apps can implement their own custom metadata cues, but this article focuses on several metadata standards that are automatically detected by the media pipeline, including:
 
@@ -23,7 +18,7 @@ This article describes how to take advantage of several formats of timed metadat
 * Fragmented mp4 emsg boxes
 
 
-This article builds on the concepts discussed  in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md), which includes the basics of working with the [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem), and [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) classes and general guidance for using timed metadata in your app.
+This article builds on the concepts discussed  in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md), which includes the basics of working with the [**MediaSource**](https://docs.microsoft.com/uwp/api/windows.media.core.mediasource), [**MediaPlaybackItem**](https://docs.microsoft.com/uwp/api/windows.media.playback.mediaplaybackitem), and [**TimedMetadataTrack**](https://docs.microsoft.com/uwp/api/Windows.Media.Core.TimedMetadataTrack) classes and general guidance for using timed metadata in your app.
 
 The basic implementation steps are the same for all of the different types of timed metadata described in this article:
 
@@ -147,7 +142,7 @@ In the **RegisterMetadataHandlerForID3Cues** helper method, get an instance of t
 
 [!code-cs[RegisterMetadataHandlerForID3Cues](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetRegisterMetadataHandlerForID3Cues)]
 
-In the handler for the **CueEntered** event, cast the data cue contained in the **Cue** property of the [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) to an [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Check to make sure the **DataCue** and the [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) property of the cue are not null. Extended EMU comments are provided in the form raw bytes in the transport stream (see [http://id3.org/id3v2.4.0-structure](http://id3.org/id3v2.4.0-structure)). Create a new **DataReader** to read the cue data by calling [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer).  In this example, the header values from the ID3 tag are read from the cue data and written to the debug output.
+In the handler for the **CueEntered** event, cast the data cue contained in the **Cue** property of the [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) to an [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Check to make sure the **DataCue** and the [**Data**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Data) property of the cue are not null. Extended EMU comments are provided in the form raw bytes in the transport stream (see [http://id3.org/id3v2.4.0-structure](https://id3.org/id3v2.4.0-structure)). Create a new **DataReader** to read the cue data by calling [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer).  In this example, the header values from the ID3 tag are read from the cue data and written to the debug output.
 
 [!code-cs[ID3CueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetID3CueEntered)]
 
@@ -173,7 +168,7 @@ In the **RegisterMetadataHandlerForEmsgCues** helper method, get an instance of 
 
 In the handler for the **CueEntered** event, cast the data cue contained in the **Cue** property of the [**MediaCueEventArgs**](https://docs.microsoft.com/uwp/api/windows.media.core.mediacueeventargs) to an [**DataCue**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue).  Check to make sure the **DataCue** object is not null. The properies of the emsg box are provided by the media pipeline as custom properties in the DataCue object's [**Properties**](https://docs.microsoft.com/uwp/api/windows.media.core.datacue.Properties) collection. This example attempts to extract several different property values using the **[TryGetValue](https://docs.microsoft.com/uwp/api/windows.foundation.collections.propertyset.trygetvalue)** method. If this method returns null, it means the requested propery is not present in the emsg box, so a default value is set instead.
 
-The next part of the example illustrates the scenario where ad playback is triggered, which is the case when the *scheme_id_uri* property, obtained in the previous step, has a value of "urn:scte:scte35:2013:xml" (see [http://dashif.org/identifiers/event-schemes/](http://dashif.org/identifiers/event-schemes/)). Note that the standard recommends sending this emsg multiple times for redundancy, so this example maintains a list of the emsg IDs that have already been processed and only processes new messages. Create a new **DataReader** to read the cue data by calling [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) and set the encoding to UTF-8 by setting the [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding) property, then read the data. In this example, the message payload is written to the debug output. A real app would use the payload data to schedule the playback of an ad.
+The next part of the example illustrates the scenario where ad playback is triggered, which is the case when the *scheme_id_uri* property, obtained in the previous step, has a value of "urn:scte:scte35:2013:xml" (see [http://dashif.org/identifiers/event-schemes/](https://dashif.org/identifiers/event-schemes/)). Note that the standard recommends sending this emsg multiple times for redundancy, so this example maintains a list of the emsg IDs that have already been processed and only processes new messages. Create a new **DataReader** to read the cue data by calling [**DataReader.FromBuffer**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.FromBuffer) and set the encoding to UTF-8 by setting the [**UnicodeEncoding**](https://docs.microsoft.com/uwp/api/windows.storage.streams.datareader.UnicodeEncoding) property, then read the data. In this example, the message payload is written to the debug output. A real app would use the payload data to schedule the playback of an ad.
 
 [!code-cs[EmsgCueEntered](./code/MediaSource_RS1/cs/MainPage_Cues.xaml.cs#SnippetEmsgCueEntered)]
 

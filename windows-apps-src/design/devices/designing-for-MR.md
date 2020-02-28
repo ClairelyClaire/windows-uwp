@@ -1,5 +1,4 @@
 ---
-author: jken
 Description: Design your app so that it looks good and functions well in Mixed Reality.
 title: Designing for Mixed Reality
 ms.assetid: 
@@ -7,25 +6,23 @@ label: Designing for Mixed Reality
 template: detail.hbs
 isNew: true
 keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
-ms.author: jken
-ms.date: 2/5/2018
+ms.date: 02/05/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 pm-contact: chigy
 design-contact: jeffarn
 dev-contact: 
 doc-status: 
 ms.localizationpriority: medium
 ---
-
 # Designing for Mixed Reality
 
 Design your app to look good in Mixed Reality, and take advantage of new input methods.
 
 ## Overview
 
-[Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) is the result of blending the physical world with the digital world. The spectrum of mixed reality experiences includes at one extreme devices such as the HoloLens (a device that mixes computer generated content with the real world), and at the other a completely immersive view of Virtual Reality (as viewed with a Windows Mixed Reality headset). See [Types of mixed reality apps](https://developer.microsoft.com/en-us/windows/mixed-reality/types_of_mixed_reality_apps) for examples of how experiences will vary.
+[Mixed Reality](https://developer.microsoft.com/windows/mixed-reality/mixed_reality) is the result of blending the physical world with the digital world. The spectrum of mixed reality experiences includes at one extreme devices such as the HoloLens (a device that mixes computer generated content with the real world), and at the other a completely immersive view of Virtual Reality (as viewed with a Windows Mixed Reality headset). See [Types of mixed reality apps](https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps) for examples of how experiences will vary.
 
 Almost all existing UWP apps will run in the Mixed Reality environment as 2D apps with no changes, although the experience for the user can be improved by following some of the guidance in this topic.
 
@@ -37,7 +34,7 @@ Both the HoloLens and Windows Mixed Reality headsets support applications runnin
 
 An immersive app takes over the entire display visible to the user, placing her at the center of a view created by the app. For example, an immersive game might place the user on the surface of an alien planet, or a tour guide app might place the user in a South American village. Creating an immersive app requires 3D graphics or captured stereographic video. Immersive apps are often developed using a 3rd party game engine such as Unity, or with DirectX.
 
-If you are creating immersive apps, you should visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/windows/mixed-reality) for more information.
+If you are creating immersive apps, you should visit the [Windows Mixed Reality Dev Center](https://developer.microsoft.com/mixed-reality) for more information.
 
 A 2D app runs as a traditional flat window within the user's view. On the HoloLens, that means a view pinned to the wall or a point in space in the users own real-world living room or office. In a Windows Mixed Reality headset, the app is pinned to a wall in the [mixed reality home](https://docs.microsoft.com/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home) (sometimes called the *Cliff House*).
 
@@ -81,9 +78,9 @@ Several novel input methods have been designed especially for use with Mixed Rea
 * [Hand gestures](https://developer.microsoft.com/windows/mixed-reality/gestures) (HoloLens only, but only used for launching 2D apps)
 * [Gamepad support](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (both environments)
 * [Clicker device](https://developer.microsoft.com/windows/mixed-reality/hardware_accessories) (HoloLens only)
-* [Motion Controllers](https://developer.microsoft.com/windows/mixed-reality/motion_controllers) (Mixed Reality devices only, shown above.)
+* [Motion Controllers](https://docs.microsoft.com/windows/mixed-reality/motion-controllers) (Mixed Reality devices only, shown above.)
 
-These controllers make interacting with virtual objects seem natural and precise. Some of the interactions you get for free. For example, the HoloLens select gesture or clicking on the Motion Controller's Windows key or trigger will generate the input reponse you would expect, again, with no coding on your part.
+These controllers make interacting with virtual objects seem natural and precise. Some of the interactions you get for free. For example, the HoloLens select gesture or clicking on the Motion Controller's Windows key or trigger will generate the input response you would expect, again, with no coding on your part.
 
 At other times, you will want to add code to take advantage of the extra information and inputs that are made available. For example, the Motion Controllers can be used to manipulate objects with a fine level of control, if you write code that takes their position and button presses into account.
 
@@ -97,7 +94,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 * Drag and drop may not work well when used with Motion Controllers, gamepads or gestures. If your application depends heavily on drag and drop, you will need to provide an alternative method of supporting this action, such as presenting a dialog confirming if objects to be moved to a new location.
 
-* Be aware how sound changes. If your app generates sound effects, the source of the sound will appear to be your app's pinned location in the virtual world. As the user moves away from the app, sound will diminish. See [Spatial sound](https://developer.microsoft.com/windows/mixed-reality/spatial_sound) for more information.
+* Be aware how sound changes. If your app generates sound effects, the source of the sound will appear to be your app's pinned location in the virtual world. As the user moves away from the app, sound will diminish. See [Spatial sound](https://docs.microsoft.com/windows/mixed-reality/spatial-sound) for more information.
 
 * Consider the field of view and provide affordances. Not every device will provide as large a field of view as a computer monitor. See [Holographic frame](https://developer.microsoft.com/windows/mixed-reality/holographic_frame) for complete details. Furthermore, the user may be some distance away from a running app. That is, the app may appear pinned to the wall at a different location in the world (real or virtual). Your app may need to get the users attention, or take into account that the entire view is not visible at all times. Toast notifications are available, but another way to get the user's attention might be to generate a sound or [speech](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs) alert.
 
@@ -150,7 +147,7 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
             {
                 // Running on desktop
                 textBlock.Text = "I'm running on the desktop.";
-                textBlock.FontSize = 16;
+                textBlock.FontSize = 14;
             }
 
 ```
@@ -165,6 +162,6 @@ bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApp
 * [Current limitations for apps using APIs from the shell](https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell)
 * [Building 2D apps](https://developer.microsoft.com/windows/mixed-reality/building_2d_apps)
 * [HoloLens: Building UWP 2D Apps for Microsoft HoloLens](https://channel9.msdn.com/Events/Build/2016/B854)
-* [Conditional XAML](https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/conditional-xaml)
+* [Conditional XAML](https://docs.microsoft.com/windows/uwp/debug-test-perf/conditional-xaml)
 
 

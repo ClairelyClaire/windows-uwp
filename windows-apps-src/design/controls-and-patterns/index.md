@@ -1,20 +1,18 @@
 ---
 description: Get design guidance and coding instructions for adding controls &amp; patterns to your UWP app. Find  over 45 powerful controls for you to use with your app.
 title: UWP Controls and patterns - Windows app development
-author: mijacobs
 keywords: uwp controls, user interface, app controls
 label: Controls & patterns
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 11/16/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
 ---
-# Controls and patterns for UWP apps
- 
+
+# Controls for UWP apps 
+
+![Controls](../images/controls-2x.png)
 
 In UWP app development, a <i>control</i> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <i>pattern</i> is a recipe for combining several controls to make something new.
 
@@ -66,8 +64,6 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="forms.md">Forms</a></li>
 
-<li style="list-style-type: none;"><a href="hub.md">Hub</a></li>
-
 <li style="list-style-type: none;"><a href="hyperlinks.md">Hyperlinks</a></li>
 
 <li style="list-style-type: none;"><a href="images-imagebrushes.md">Images and image brushes</a></li>
@@ -110,8 +106,6 @@ Detailed information about specific controls and patterns. (For a list sorted by
 
 <li style="list-style-type: none;"><a href="text-controls.md">Text controls</a></li>
 
-<li style="list-style-type: none;"><a href="index.md">Tiles, badges, and notifications</a></li>
-
 
 <li style="list-style-type: none;"><a href="toggles.md">Toggle</a></li>
 <li style="list-style-type: none;"><a href="tooltips.md">Tooltips</a></li>
@@ -128,13 +122,13 @@ Get the _XAML Controls Gallery_ app from the Microsoft Store to see these contro
 
 <a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a>
 
-<a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a>
+<a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a>
 
 <img src="images/xaml-controls-gallery.png" alt="XAML Controls Gallery screen" />
 
 ## Additional controls
 
-Additional controls for UWP development are available from companies such as <a href="http://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/products/uwp">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
-<a href="http://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="http://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.  
+Additional controls for UWP development are available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
+<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.  
 
 If you're interested in learning more about these controls, check out the <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customer orders database</a> sample on GitHub. This sample makes use of the data grid control and data entry validation from Telerik, which is part of their UI for UWP suite. The UI for UWP suite is a collection of over 20 controls that is available as an open source project through the .NET foundation.

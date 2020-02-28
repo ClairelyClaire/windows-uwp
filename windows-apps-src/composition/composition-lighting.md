@@ -1,12 +1,8 @@
 ---
-author: daneuber
 title: Composition Lighting
 description: The Composition Lighting APIs can be used to add dynamic 3D lighting to your application.
-ms.author: jimwalk
 ms.date: 07/16/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -20,7 +16,7 @@ The Windows.UI.Composition APIs enable you to create real-time animations and ef
 Composition lighting lets you create interesting UI by allowing:
 
 - Transformation of a light independent of other objects in the scene to enable immersive scenarios like music playback scenes.
-- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](/design/style/reveal.md) highlight.
+- The ability to pair an object with a light so they move together independent of the rest of the scene to enable scenarios like Fluent [Reveal](/windows/uwp/design/style/reveal) highlight.
 - Transformation of the light and entire scene as a group to create materials and depth.
 
 Composition lighting supports three key concepts: **Light**, **Targets**, and **SceneLightingEffect**.
@@ -61,7 +57,7 @@ By adding animation to the offset of the point light, a shimmering effect is eas
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
-See the complete [Text Shimmer](https://github.com/Microsoft/WindowsUIDevLabs/tree/master/SampleGallery/Samples/SDK%2014393/TextShimmer) sample at the WindowUIDevLabs Sample Galley to learn more.
+See the complete [Text Shimmer](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK 14393/TextShimmer) sample at the WindowUIDevLabs Sample Galley to learn more.
 
 ## Restrictions
 
@@ -72,7 +68,7 @@ Concept | Details
 **Ambient Light** | Adding a non-ambient light to your scene will turn off all existing light.  Items not targeted by a non-ambient light will appear black.  To illuminate surrounding visuals not targeted by the light in a natural way, use an ambient light in conjunction with other lights.
 **Number of Lights** | You may use any two non-ambient composition lights in any combination to target your UI. Ambient lights are not restricted; spot, point, and distant lights are.
 **Lifetime** | CompositionLight may experience lifetime conditions (example: the garbage collector may recycle the light object before it is used).  We recommended keeping a reference to your lights by adding lights as a member to help the application manage lifetime.
-**Transforms** | Lights must be placed in a node above UI that uses effects like [perspective transforms](/design/layout/3-d-perspective-effects.md) in your visual structure to be drawn properly.
+**Transforms** | Lights must be placed in a node above UI that uses effects like [perspective transforms](/windows/uwp/design/layout/3-d-perspective-effects) in your visual structure to be drawn properly.
 **Targets and Coordinate Space** | CoordinateSpace is the visual space in which all the lights properties must be set. CompositionLight.Targets must be within the CoordinateSpace tree.
 
 ## Lighting Properties
@@ -165,4 +161,4 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 - [CompositionCapabilities API](https://docs.microsoft.com/uwp/api/windows.ui.composition.compositioncapabilities)
 - [Mathematics of Lighting](https://docs.microsoft.com/windows/uwp/graphics-concepts/mathematics-of-lighting)
 - [SceneLightingEffect](https://docs.microsoft.com/uwp/api/windows.ui.composition.effects.scenelightingeffect)
-- [WindowsUIDevLabs GitHub Repo](https://github.com/Microsoft/WindowsUIDevLabs)
+- [WindowsUIDevLabs GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)

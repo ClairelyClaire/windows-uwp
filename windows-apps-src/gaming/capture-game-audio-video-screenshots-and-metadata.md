@@ -1,21 +1,16 @@
 ---
-author: drewbatgit
 ms.assetid: 
 description: Shows how to record game audio, video, and metadata for in a UWP app.
 title: Capture game audio, video, screenshots, and metadata
-ms.author: drewbat
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, game, capture, audio, video, metadata
 ms.localizationpriority: medium
 ---
-
 # Capture game audio, video, screenshots, and metadata
 This article describes how to capture game video, audio, and screenshots, and how to submit metadata that the system will embed in captured and broadcast media, allowing your app and others to create dynamic experiences that are synchronized to gameplay events. 
 
-There are two different ways that gameplay can be captured in a UWP app. The user can initiate capture using the built-in system UI. Media that is captured using this technique is ingested into the Microsoft gaming ecosystem, can be viewed and shared through first-party experiences such as the XBox app, and is not directly availble to your app or to users. The first sections of this article will show you how to enable and disable system-implemented app capture and how to receive notifications when app capture starts or stops.
+There are two different ways that gameplay can be captured in a UWP app. The user can initiate capture using the built-in system UI. Media that is captured using this technique is ingested into the Microsoft gaming ecosystem, can be viewed and shared through first-party experiences such as the Xbox app, and is not directly availble to your app or to users. The first sections of this article will show you how to enable and disable system-implemented app capture and how to receive notifications when app capture starts or stops.
 
 The other way to capture media is to use the APIs of the **[Windows.Media.AppRecording](https://docs.microsoft.com/uwp/api/windows.media.apprecording)** namespace. If capturing is enabled on the device, your app can start capturing gameplay and then, after some time has passed, you can stop the capture, at which point the media is written to a file. If the user has enabled historical capture, then you can also record gameplay that has already occured by specifying a start time in the past and a duration to record. Both of these techniques produce an video file that can be accessed by your app, and depending on where you choose to save the files, by the user. The middle sections of this article walk you through the implemenation of these scenarios.
 
@@ -26,7 +21,7 @@ The **[Windows.Media.Capture](https://docs.microsoft.com/uwp/api/windows.media.c
 
 
 ## Enable and disable system app capture
-System app capture is initiated by the user with the built-in system UI. The files are ingested by the Windows gaming ecosystem and is not available to your app or the user, except for through first party experiences like the XBox app. Your app can disable and enable system-initiated app capture, allowing you to prevent the user from capturing certain content or gameplay. 
+System app capture is initiated by the user with the built-in system UI. The files are ingested by the Windows gaming ecosystem and is not available to your app or the user, except for through first party experiences like the Xbox app. Your app can disable and enable system-initiated app capture, allowing you to prevent the user from capturing certain content or gameplay. 
 
 To enable or disable system app capture, simply call the static method **[AppCapture.SetAllowedAsync](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapture.setallowedasync)** and passing **false** to disable capture or **true** to enable capture.
 
@@ -56,7 +51,7 @@ The **[AppRecordingManager](https://docs.microsoft.com/uwp/api/windows.media.app
 [!code-cpp[GetAppRecordingManager](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetGetAppRecordingManager)]
 
 ## Determine if your app can currently record
-There are several reasons that your app may not currently be able to capture audio or video, including if the current device doesn't meet the hardware requirements for recording or if another app is currently broadcasting. Before initiating a recording, you can check to see if your app is currently able to record. Call the **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** method of the **AppRecordingManager** object and then check the **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** property of the returned **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** object. If **CanRecord** returns **false**, meaning that your app can't currenty record, you can check the **[Details](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** property to determine the reason. Depending on the reason, you may want to display the status to the user or show instructions for enabling app recording.
+There are several reasons that your app may not currently be able to capture audio or video, including if the current device doesn't meet the hardware requirements for recording or if another app is currently broadcasting. Before initiating a recording, you can check to see if your app is currently able to record. Call the **[GetStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingmanager.GetStatus)** method of the **AppRecordingManager** object and then check the **[CanRecord](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.CanRecord)** property of the returned **[AppRecordingStatus](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus)** object. If **CanRecord** returns **false**, meaning that your app can't currently record, you can check the **[Details](https://docs.microsoft.com/uwp/api/windows.media.apprecording.apprecordingstatus.Details)** property to determine the reason. Depending on the reason, you may want to display the status to the user or show instructions for enabling app recording.
 
 
 
@@ -142,7 +137,7 @@ You can end all currently open states by calling **[StopAllStates](https://docs.
 [!code-cpp[RaceComplete](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRaceComplete)]
 
 ### Manage metadata cache storage limit
-The metadata that you write with **AppCaptureMetadataWriter** is cached by the system until it is written to the associated media stream. The system defines a size limit for each app's metadata cache. Once the cache size limit has been reached, the system will begin purging cached metadata. The system will delete metadata that was written with **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** proiority value before deleting metadata with the **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** priority.
+The metadata that you write with **AppCaptureMetadataWriter** is cached by the system until it is written to the associated media stream. The system defines a size limit for each app's metadata cache. Once the cache size limit has been reached, the system will begin purging cached metadata. The system will delete metadata that was written with **[AppCaptureMetadataPriority.Informational](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** priority value before deleting metadata with the **[AppCaptureMetadataPriority.Important](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatapriority)** priority.
 
 At any point, you can check to see the number of bytes available in your app's metadata cache by calling **[RemainingStorageBytesAvailable](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.RemainingStorageBytesAvailable)**. You can choose to set your own app-defined threshold after which you can choose to reduce the amount of metadata that you write to the cache. The following example shows a simple implementation of this pattern.
 
@@ -151,7 +146,7 @@ At any point, you can check to see the number of bytes available in your app's m
 [!code-cpp[ComboExecuted](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetComboExecuted)]
 
 ### Receive notifications when the system purges metadata
-You can register to recieve a notification when the system begins purging metadata for your app by registering a handler for the **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** event.
+You can register to receive a notification when the system begins purging metadata for your app by registering a handler for the **[MetadataPurged](https://docs.microsoft.com/uwp/api/windows.media.capture.appcapturemetadatawriter.MetadataPurged)** event.
 
 [!code-cpp[RegisterMetadataPurged](./code/AppRecordingExample/cpp/AppRecordingExample/App.cpp#SnippetRegisterMetadataPurged)]
 

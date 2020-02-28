@@ -1,25 +1,21 @@
 ---
-author: daneuber
 title: XAML lighting
 description: Light objects are used in conjunction with SceneLightingEffect to simulate dynamic lighting and reflectivity.
-ms.author: jimwalk
 ms.date: 06/28/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
   - csharp
   - vb
-  - cpp
+  - cppcx
   - cppwinrt
 ---
 # XAML lighting
 
 [**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.
 
-You can apply lights to [**Visuals**](https://msdn.microsoft.com/library/windows/apps/Dn706858) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
+You can apply lights to [**Visuals**](https://docs.microsoft.com/uwp/api/Windows.UI.Composition.Visual) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
 
 ## Applying lights to XAML UIElements
 
@@ -338,7 +334,7 @@ struct MainPage : MainPageT<MainPage>
 };
 ```
 
-```cpp
+```cppcx
 // OrangeSpotLight.h:
 public ref class OrangeSpotLight sealed :
     public Windows::UI::Xaml::Media::XamlLight
@@ -496,4 +492,4 @@ The results of this XAML look like this.
 
 ## Additional Resources
 
-* Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs).
+* Advanced UI and Composition samples in the [WindowsUIDevLabs GitHub](https://github.com/microsoft/WindowsCompositionSamples).

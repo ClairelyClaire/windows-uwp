@@ -1,14 +1,11 @@
 ---
-author: TylerMSFT
 title: Save and load settings in a UWP app
 description: Learn how to save and load app settings in Universal Windows Platform apps.
-ms.author: twhitney
 ms.date: 05/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: get started, uwp, windows 10, learning track, settings, save settings, load settings
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Save and load settings in a UWP app
 
@@ -83,7 +80,7 @@ Here is a quick summary of APIs, and other useful documentation, to help get you
 
 | API | Description |
 |------|---------------|
-| [ApplicationData.LocalSettings](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.temporaryfolder) | Gets the application settings container from the local app data store. |
+| [ApplicationData.LocalSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.temporaryfolder) | Gets the application settings container from the local app data store. |
 | [ApplicationData.RoamingSettings](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.roamingsettings) | Gets the application settings container from the roaming app data store. |
 | [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) | A container for app settings that supports creating, deleting, enumerating, and traversing the container hierarchy. |
 | [Windows.UI.ApplicationSettings Namespace](https://docs.microsoft.com/uwp/api/windows.ui.applicationsettings) | Provides classes that you'll use to define the app settings that appear in the settings pane of the Windows shell. |

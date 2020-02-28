@@ -1,13 +1,9 @@
 ---
-author: QuinnRadich
 description: Enables users to view and set ratings that reflect satisfaction with content and services. 
 title: Rating Control
 template: detail.hbs
-ms.author: quradic
 ms.date: 10/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: abarlow
 design-contact: kimsea
@@ -15,14 +11,11 @@ dev-contact: mitra
 doc-status: Published
 ms.localizationpriority: medium
 ---
-
 # Rating control
 
 The rating control allows users to view and set ratings that reflect degrees of satisfaction with content and services. Users can interact with the rating control with touch, pen, mouse, gamepad or keyboard. The follow guidance shows how to use the rating control's features to provide flexibility and customization.
 
 > **Important APIs**: [RatingControl class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.ratingcontrol)
-
-![Example of Rating Control](images/rating_rs2_doc_ratings_intro.png)
 
 ## Examples
 
@@ -34,11 +27,13 @@ The rating control allows users to view and set ratings that reflect degrees of 
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RatingControl">open the app and see the RatingControl in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
 </table>
+
+![Example of Rating Control](images/rating_rs2_doc_ratings_intro.png)
 
 ### Editable rating with placeholder value
 
@@ -85,7 +80,7 @@ To do this you would do the following:
 
 ## Additional functionality
 
-The rating control has many additional features which can be used. Details for using these features can be found in our MSDN reference documentation.
+The rating control has many additional features which can be used. Details for using these features can be found in our reference documentation.
 Here is a non-comprehensive list of additional functionality:
 -   Great long list performance
 -   Compact sizing for tight UI scenarios
@@ -96,4 +91,4 @@ Here is a non-comprehensive list of additional functionality:
 
 ## Get the sample code
 
-- [XAML Controls Gallery sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics) - See all the XAML controls in an interactive format.
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.

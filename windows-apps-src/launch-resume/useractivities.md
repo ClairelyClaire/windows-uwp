@@ -1,16 +1,13 @@
 ---
-author: TylerMSFT
 title: Continue user activity, even across devices
 description: This topic describes how to help users resume what they were doing in your app, even across multiple devices.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
-ms.author: twhitney
 ms.date: 04/27/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
+
+
 ms.localizationpriority: medium
 ---
-
 # Continue user activity, even across devices
 
 This topic describes how to help users resume what they were doing in your app on their PC, and across devices.
@@ -31,9 +28,9 @@ When you engage with a **UserActivity** by calling [UserActivity.CreateSession](
 
 A [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity) is the unit of user engagement in Windows. It has three parts: a URI used to activate the app the activity belongs to, visuals, and metadata that describes the activity.
 
-1. The [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) is used to resume the application with a specific context. Typically, this link takes the form of protocol handler for a scheme (e.g. “my-app://page2?action=edit”) or of an AppUriHandler (e.g. http://constoso.com/page2?action=edit).
+1. The [ActivationUri](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.activationuri#Windows_ApplicationModel_UserActivities_UserActivity_ActivationUri) is used to resume the application with a specific context. Typically, this link takes the form of protocol handler for a scheme (for example, “my-app://page2?action=edit”) or of an AppUriHandler (for example, http://constoso.com/page2?action=edit).
 2. [VisualElements](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.visualelements) exposes a class that allows the user to visually identify an activity with a title, description, or Adaptive Card elements.
-3. Finally, [Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) is where you can store metadata for the activity that can be used to group and retrieve activities under a specific context. Often, this takes the form of [http://schema.org](http://schema.org) data.
+3. Finally, [Content](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivityvisualelements.content#Windows_ApplicationModel_UserActivities_UserActivityVisualElements_Content) is where you can store metadata for the activity that can be used to group and retrieve activities under a specific context. Often, this takes the form of [https://schema.org](https://schema.org) data.
 
 To add a **UserActivity** to your app:
 
@@ -72,7 +69,7 @@ The first line in the `GenerateActivityAsync()` method above gets a user’s [Us
 
 After getting or creating the **UserActivity**, specify the other two required fields:  `UserActivity.VisualElements.DisplayText`and `UserActivity.ActivationUri`.
 
-Next, save the **UserActivity** metadata by calling [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), and finally [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), which returns a [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). The **UserActivitySession** is the object that we can use to manage when the user is actually engaged with the **UserActivity**. For example, we should call `Dispose()` on the **UserActivitySession** when the user leaves the page. In the example above, we also call `Dispose()` on `_currentActivity` before calling `CreateSession()`. This is because we made `_currentActivity` a member field of our page, and we want to stop any existing activity before we start the new one (note: the `?` is the [null-conditional operator](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operators) which tests for null before performing the member access).
+Next, save the **UserActivity** metadata by calling [SaveAsync](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.saveasync), and finally [CreateSession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivity.createsession), which returns a [UserActivitySession](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities.useractivitysession). The **UserActivitySession** is the object that we can use to manage when the user is actually engaged with the **UserActivity**. For example, we should call `Dispose()` on the **UserActivitySession** when the user leaves the page. In the example above, we also call `Dispose()` on `_currentActivity` before calling `CreateSession()`. This is because we made `_currentActivity` a member field of our page, and we want to stop any existing activity before we start the new one (note: the `?` is the [null-conditional operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/member-access-operators#null-conditional-operators--and-) which tests for null before performing the member access).
 
 Since, in this case, the `ActivationUri` is a custom scheme, we also need to register the protocol in the application manifest. This is done in the Package.appmanifest XML file, or by using the designer.
 
@@ -98,11 +95,11 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-What this code does is detect whether the app was activated via a protocol. If it was, then it looks to see what the app should do to resume the task it is being activated for. Being a simple app, the only activity this app resumes is putting you on on the secondary page when the app comes up.
+What this code does is detect whether the app was activated via a protocol. If it was, then it looks to see what the app should do to resume the task it is being activated for. Being a simple app, the only activity this app resumes is putting you on the secondary page when the app comes up.
 
 ## Use Adaptive Cards to improve the Timeline experience
 
-User Activities appear in Cortana and Timeline. When activities appear in Timeline, we display them using the [Adaptive Card](http://adaptivecards.io/) framework. If you do not provide an adaptive card for each activity, Timeline will automatically create a simple activity card based on your application name and icon, the title field and optional description field. Below is an example Adaptive Card payload and the card it produces.
+User Activities appear in Cortana and Timeline. When activities appear in Timeline, we display them using the [Adaptive Card](https://adaptivecards.io/) framework. If you do not provide an adaptive card for each activity, Timeline will automatically create a simple activity card based on your application name and icon, the title field and optional description field. Below is an example Adaptive Card payload and the card it produces.
 
 ![An adaptive card](images/adaptivecard.png)]
 
@@ -148,16 +145,16 @@ Windows.UI.Shell.AdaptiveCardBuilder.CreateAdaptiveCardFromJson(jsonCardText); /
 
 ## Cross-platform and Service-to-service integration
 
-If your app runs cross-platform (for example on Android and iOS), or maintains user state in the cloud, you can publish UserActivities via [Microsoft Graph](https://developer.microsoft.com/graph/).
-Once your application or service is authenticated with a Microsoft Account, it just takes two simple REST calls to generate [Activity](https://developer.microsoft.com/graph/docs/api-reference/beta/api/projectrome_put_activity) and [History](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/projectrome_historyitem) objects, using the same data as described above.
+If your app runs cross-platform (for example on Android and iOS), or maintains user state in the cloud, you can publish UserActivities via [Microsoft Graph](https://developer.microsoft.com/graph).
+Once your application or service is authenticated with a Microsoft Account, it just takes two simple REST calls to generate [Activity](https://docs.microsoft.com/graph/api/resources/projectrome-activity) and [History](https://docs.microsoft.com/graph/api/resources/projectrome-historyitem) objects, using the same data as described above.
 
 ## Summary
 
 You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities) API to make your app appear in Timeline and Cortana.
-* Learn more about the **UserActivity** API on the [Windows Dev Center](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
+* Learn more about the [**UserActivity** API](https://docs.microsoft.com/uwp/api/windows.applicationmodel.useractivities)
 * Check out the [sample code](https://github.com/Microsoft/project-rome).
-* See [more sophisticated Adaptive Cards](http://adaptivecards.io/).
-* Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph/).
+* See [more sophisticated Adaptive Cards](https://adaptivecards.io/).
+* Publish a **UserActivity** from iOS, Android or your web service via [Microsoft Graph](https://developer.microsoft.com/graph).
 * Learn more about [Project Rome on GitHub](https://github.com/Microsoft/project-rome).
 
 ## Key APIs
@@ -168,7 +165,7 @@ You can use the [UserActivity](https://docs.microsoft.com/uwp/api/windows.applic
 
 * [User Activities (Project Rome docs)](https://docs.microsoft.com/windows/project-rome/user-activities/)
 * [Adaptive cards](https://docs.microsoft.com/adaptive-cards/)
-* [Adaptive cards visualizer, samples](http://adaptivecards.io/)
+* [Adaptive cards visualizer, samples](https://adaptivecards.io/)
 * [Handle URI activation](https://docs.microsoft.com/windows/uwp/launch-resume/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](https://channel9.msdn.com/Events/Connect/2017/B111)
-* [Microsoft Graph](https://developer.microsoft.com/graph/)
+* [Microsoft Graph](https://developer.microsoft.com/graph)

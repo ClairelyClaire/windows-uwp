@@ -1,17 +1,13 @@
 ---
-author: normesta
 title: Use a SQLite database in a UWP app
 description: Use a SQLite database in a UWP app.
-ms.author: normesta
-ms.date: 06/08/2018
+ms.date: 11/30/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, SQLite, database
 ms.localizationpriority: medium
 ---
 # Use a SQLite database in a UWP app
-You can use SQLite to store and retrieve data in a light-weight database on the users device. This guide shows you how.
+You can use SQLite to store and retrieve data in a light-weight database on the user's device. This guide shows you how.
 
 ## Some benefits of using SQLite for local storage
 
@@ -37,7 +33,7 @@ To try it out, see [Getting started with EF Core on Universal Windows Platform (
 
 ### SQLite library
 
-The [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) library implements the interfaces in the [System.Data.Common](https://msdn.microsoft.com/library/system.data.common.aspx) namespace. Microsoft actively maintains these implementations, and they provide an intuitive wrapper around the low-level native SQLite API.
+The [Microsoft.Data.Sqlite](https://docs.microsoft.com/dotnet/api/microsoft.data.sqlite?view=msdata-sqlite-2.0.0) library implements the interfaces in the [System.Data.Common](https://docs.microsoft.com/dotnet/api/system.data.common) namespace. Microsoft actively maintains these implementations, and they provide an intuitive wrapper around the low-level native SQLite API.
 
 The rest of this guide helps you to use this library.
 
@@ -81,7 +77,7 @@ There's a couple of benefits to raising the minimum version of your UWP project 
 
 First off, you can use .NET Standard 2.0 libraries instead of regular class libraries. That means that you can share your data access code with any other .NET-based app such as a WPF, Windows Forms, Android, iOS, or ASP.NET app.
 
-Secondly, your app does not have package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
+Secondly, your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 
 :heavy_check_mark: Reduces the size of your application because you don't have to download the SQLite binary, and then package it as part of your application.
 
@@ -161,10 +157,11 @@ namespace DataAccessLibrary
 
 ```
 
-Add the following using statement to the top of this file.
+Add the following using statements to the top of this file.
 
 ```csharp
 using Microsoft.Data.Sqlite;
+using System.Collections.Generic;
 ```
 
 <a id="initialize" />
@@ -174,10 +171,12 @@ using Microsoft.Data.Sqlite;
 Add a method to the **DataAccess** class that initializes the SQLite database.
 
 ```csharp
-public static void InitializeDatabase()
-{
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+public async static void InitializeDatabase()
+{ 
+     await ApplicationData.Current.LocalFolder.CreateFileAsync("sqliteSample.db", CreationCollisionOption.OpenIfExists);
+     string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+     using (SqliteConnection db =
+        new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -218,8 +217,9 @@ Add a method to the **DataAccess** class that inserts data into the SQLite datab
 ```csharp
 public static void AddData(string inputText)
 {
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
     using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 
@@ -249,8 +249,9 @@ public static List<String> GetData()
 {
     List<String> entries = new List<string>();
 
-    using (SqliteConnection db =
-        new SqliteConnection("Filename=sqliteSample.db"))
+   string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path, "sqliteSample.db");
+   using (SqliteConnection db =
+      new SqliteConnection($"Filename={dbpath}"))
     {
         db.Open();
 

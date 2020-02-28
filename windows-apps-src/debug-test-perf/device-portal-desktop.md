@@ -1,19 +1,14 @@
 ---
-author: PatrickFarley
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: Device Portal for Windows Desktop
 description: Learn how the Windows Device Portal opens up diagnostics and automation on your Windows desktop.
-ms.author: pafarley
-ms.date: 03/15/2018
+ms.date: 02/06/2019
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, device portal
 ms.localizationpriority: medium
 ---
+
 # Device Portal for Windows Desktop
-
-
 
 Windows Device Portal lets you view diagnostic information and interact with your desktop over HTTP from a browser window. You can use Device Portal to do the following:
 - See and manipulate a list of running processes
@@ -39,7 +34,7 @@ You can enable Device Portal in the **For developers** section of **Settings**. 
 
 ![Device Portal section of the Settings app](images/device-portal/device-portal-desk-settings.png) 
 
-Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. If you'd like to set the port numbers manually so that they remain permanent, see [Setting port numbers](device-portal-desktop.md#setting-port-numbers).
+Once Device Portal is enabled, you will see web links at the bottom of the section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when Device Portal is enabled but should remain consistent between reboots of the desktop. 
 
 These links offer two ways to connect to Device Portal: over the local network (including VPN) or through the local host.
 
@@ -75,6 +70,7 @@ Device Portal on Windows Desktop provides the standard set of pages. For detaile
 - Scratch
 
 ## More Device Portal options
+
 ### Registry-based configuration for Device Portal
 
 If you would like to select port numbers for Device Portal (such as 80 and 443), you can set the following regkeys:
@@ -94,7 +90,7 @@ From an administrative command prompt, you can enable and configure parts of Dev
 - `sc start webmanagement` or `sc stop webmanagement` 
 	- Turn the service on or off. This still requires developer mode to be enabled. 
 - `-Credentials <username> <password>` 
-	- Set a username and password for Device Portal. The username must conform to Basic Auth standards, so cannot contain a colon (:) and should be built out of standard ASCII characters e.g. [a-zA-Z0-9] as browsers do not parse the full character set in a standard way.  
+	- Set a username and password for Device Portal. The username must conform to Basic Auth standards, so cannot contain a colon (:) and should be built out of standard ASCII characters for example, [a-zA-Z0-9] as browsers do not parse the full character set in a standard way.  
 - `-DeleteSSL` 
 	- This resets the SSL certificate cache used for HTTPS connections. If you encounter TLS connection errors that cannot be bypassed (as opposed to the expected certificate warning), this option may fix the problem for you. 
 - `-SetCert <pfxPath> <pfxPassword>`
@@ -102,7 +98,31 @@ From an administrative command prompt, you can enable and configure parts of Dev
 	- This allows you to install your own SSL certificate to fix the SSL warning page that is typically seen in Device Portal. 
 - `-Debug <various options for authentication, port selection, and tracing level>`
 	- Run a standalone version of Device Portal with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](https://docs.microsoft.com/windows/uwp/debug-test-perf/device-portal-plugin). 
-	- See the [MSDN Magazine article](https://msdn.microsoft.com/en-us/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin.
+	- See the [MSDN Magazine article](https://msdn.microsoft.com/magazine/mt826332.aspx) for details on how to run this as System to fully test your packaged plugin.
+
+## Common errors and issues
+
+Below are some common errors that you may encounter when setting up Device Portal.
+
+### WindowsUpdateSearch returns invalid number of updates (0x800f0950 CBS_E_INVALID_WINDOWS_UPDATE_COUNT)
+
+You may get this error when trying to install the developer packages on a pre-release build of Windows 10. These Feature-on-Demand (FoD) packages are hosted on Windows Update, and downloading them on pre-release builds requires that you opt into flighting. If your installation is not opted into flighting for the right build and ring combination, the payload will not be downloadable. Double-check the following:
+
+1. Navigate to **Settings > Update & Security > Windows Insider Program** and confirm that the **Windows Insider account** section has your correct account info. If you don't see that section, select **Link a Windows Insider account**, add your email account, and confirm that it shows up under the **Windows Insider account** heading (you may need to select **Link a Windows Insider account** a second time to actually link a newly added account).
+ 
+2. Under **What kind of content would you like to receive?**, make sure **Active development of Windows** is selected.
+ 
+3. Under **What pace do you want to get new builds?**, make sure **Windows Insider Fast** is selected.
+ 
+4. You should now be able to install the FoDs. If you've confirmed that you're on Windows Insider Fast and still cannot install the FoDs, please provide feedback and attach the log files under **C:\Windows\Logs\CBS**.
+
+### [SC] StartService: OpenService FAILED 1060: The specified service does not exist as an installed service
+
+You may get this error if the developer packages aren't installed. Without the developer packages, there is no web management service. Try installing the developer packages again.
+
+### CBS cannot start download because the system is on metered network (CBS_E_METERED_NETWORK)
+
+You may get this error if you're on a metered internet connection. You won't be able to download the developer packages on a metered connection.
 
 ## See also
 

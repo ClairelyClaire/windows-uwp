@@ -1,18 +1,16 @@
 ---
-author: mcleanbyron
 ms.assetid: 7a38a352-6e54-4949-87b1-992395a959fd
 description: Learn about UI and user experience guidelines for ads in apps.
 title: UI and user experience guidelines for ads
-ms.author: mcleans
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, guidelines, best practices
 ms.localizationpriority: medium
 ---
-
 # UI and user experience guidelines for ads
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This article provides guidelines for providing great experiences with banner ads, interstitial ads, and native ads in your apps. For general guidance about how to design the look and feel for apps, see [Design & UI](https://developer.microsoft.com/windows/apps/design).
 
@@ -24,10 +22,10 @@ This article provides guidelines for providing great experiences with banner ads
 Before reviewing our guidelines for different types of ads in this article, first review these general best practices to improve your ad revenue.
 
 * [Plan your ad placements carefully](https://blogs.windows.com/buildingapps/2017/04/10/monetizing-app-advertisement-placement/). See our related guidance about [optimizing the viewability of your ad units](optimize-ad-unit-viewability.md).
-* [Use interstitial banner ads as a fallback for interstitial video ads](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video).
+* [Use interstitial banner ads as a fallback for interstitial video ads](https://blogs.windows.com/buildingapps/2017/04/17/monetizing-app-use-interstitial-banner-fallback-interstitial-video/).
 * [Know your users to serve better targeted ads](https://blogs.windows.com/buildingapps/2017/05/17/monetize-app-know-user-serve-better-targeted-ads/).
 * [Use the latest advertising libraries](https://blogs.windows.com/buildingapps/2017/05/22/earn-money-moving-latest-advertising-libraries/).
-* [Set the correct COPPA settings for your app](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app).
+* [Set the correct COPPA settings for your app](https://blogs.windows.com/buildingapps/2017/06/21/monetizing-app-set-coppa-settings-app/).
 
 
 ## Guidelines for banner ads
@@ -38,7 +36,7 @@ The following sections provide recommendations for how to implement [banner ads]
 
 We recommend that you follow these best practices when you implement banner ads in your app:
 
-* [Use Interactive Advertising Bureau sizes](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes) that fit well with the layout for the device.
+* [Use Interactive Advertising Bureau sizes](https://blogs.windows.com/buildingapps/2017/04/03/monetizing-app-use-interactive-advertising-bureau-ad-sizes/) that fit well with the layout for the device.
 
 * Devote most of your app's UI to functional controls and content.
 
@@ -70,11 +68,13 @@ This section provides examples of banner ad scenarios that violate [policy 10.10
 
 * Bypassing the built-in minimum refresh timer for banner ads by any means, including (but not limited to) swapping [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) objects or forcing a page refresh without user interaction.
 
-* Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.
+* Using live ad units (that is, ad units that you obtain from Partner Center) during development and testing, or in an emulator.
 
 * Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.
 
 * Interacting with undocumented interfaces or child objects created by the Microsoft advertising libraries, such as **WebView** or **MediaElement**.
+
+* Placing ads in a viewbox to reduce the size of the ads in order to allow more ads on a page than normal.
 
 <span id="interstitialbestpractices10" />
 
@@ -154,7 +154,7 @@ This section provides examples of interstitial ad scenarios that violate [policy
 
 * Requesting an interstitial ad merely to have a backup ad for a waterfall sequence of ads. If you request an interstitial ad and then receive the [InterstitialAd.AdReady](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.adready) event, the next interstitial ad shown in your app must be the ad that is ready to be shown via the [InterstitialAd.Show](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.interstitialad.show) method.
 
-* Using live ad units (that is, ad units that you obtain from the Windows Dev Center dashboard) during development and testing, or in an emulator.
+* Using live ad units (that is, ad units that you obtain from Partner Center) during development and testing, or in an emulator.
 
 * Writing or distributing code that calls ad services through means other than the Microsoft advertising libraries running in the context of your app.
 

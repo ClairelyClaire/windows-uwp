@@ -1,24 +1,19 @@
 ---
-author: eliotcowley
 title: Missing .NET APIs in Unity and UWP
 description: Learn about the missing .NET APIs when building UWP games in Unity, and workarounds for common issues.
 ms.assetid: 28A8B061-5AE8-4CDA-B4AB-2EF0151E57C1
-ms.author: elcowle
-ms.date: 2/21/2018
+ms.date: 02/21/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, games, .net, unity
 ms.localizationpriority: medium
 ---
-
 # Missing .NET APIs in Unity and UWP
 
 When building a UWP game using .NET, you may find that some APIs that you might use in the Unity editor or for a standalone PC game are not present for UWP. That's because .NET for UWP apps includes a subset of the types provided in the full .NET Framework for each namespace.
 
 Additionally, some game engines use different flavors of .NET that aren't fully compatible with .NET for UWP, such as Unity's Mono. So when you're writing your game, everything might work fine in the editor, but when you go to build for UWP, you might get errors like this: **The type or namespace 'Formatters' does not exist in the namespace 'System.Runtime.Serialization' (are you missing an assembly reference?)**
 
-Fortunately, Unity provides some of these missing APIs as extension methods and replacement types, which are described in [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). However, if the functionality you need is not here, [.NET for Windows 8.x apps overview](https://msdn.microsoft.com/library/windows/apps/br230302) discusses ways you can convert your code to use WinRT or .NET for UWP APIs. (It discusses Windows 8, but is applicable to Windows 10 UWP apps as well.)
+Fortunately, Unity provides some of these missing APIs as extension methods and replacement types, which are described in [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html). However, if the functionality you need is not here, [.NET for Windows 8.x apps overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)) discusses ways you can convert your code to use WinRT or .NET for UWP APIs. (It discusses Windows 8, but is applicable to Windows 10 UWP apps as well.)
 
 ## .NET Standard
 
@@ -144,5 +139,5 @@ In the case of **System.Net.Mail**, use the [Windows.ApplicationModel.Email](htt
 ## See also
 
 * [Universal Windows Platform: Missing .NET Types on .NET Scripting Backend](https://docs.unity3d.com/Manual/windowsstore-missingtypes.html)
-* [.NET for UWP apps overview](https://msdn.microsoft.com/library/windows/apps/br230302)
+* [.NET for UWP apps overview](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
 * [Unity UWP porting guides](https://unity3d.com/partners/microsoft/porting-guides)

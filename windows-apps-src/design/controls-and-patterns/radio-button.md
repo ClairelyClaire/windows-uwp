@@ -1,15 +1,11 @@
 ---
-author: QuinnRadich
 Description: Radio buttons let users select one option from two or more choices.
 title: Guidelines for radio buttons
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
-ms.author: quradic
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: kimsea
@@ -65,7 +61,7 @@ If the available options are based on the app’s current context, or can otherw
     <p>If you have the <strong style="font-weight: semi-bold">XAML Controls Gallery</strong> app installed, click here to <a href="xamlcontrolsgallery:/item/RadioButton">open the app and see the RadioButton in action</a>.</p>
     <ul>
     <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the XAML Controls Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">Get the source code (GitHub)</a></li>
+    <li><a href="https://github.com/Microsoft/Xaml-Controls-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
 </tr>
@@ -185,14 +181,20 @@ This illustration shows the proper way to position and space radio buttons.
 
 ![spacing guidelines for radio buttons](images/radiobutton-redlines.png)
 
+## Get the sample code
+
+- [XAML Controls Gallery sample](https://github.com/Microsoft/Xaml-Controls-Gallery) - See all the XAML controls in an interactive format.
+
 ## Related topics
 
-**For designers**
+### For designers
+
 - [Buttons](buttons.md)
 - [Toggle switches](toggles.md)
 - [Checkboxes](checkbox.md)
 - [Lists and combo boxes](lists.md)
 - [Sliders](slider.md)
 
-**For developers (XAML)**
+### For developers (XAML)
+
 - [RadioButton class](https://docs.microsoft.com/uwp/api/windows.ui.xaml.controls.radiobutton)

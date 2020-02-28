@@ -1,14 +1,10 @@
 ---
-author: andrewleader
 Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
 title: Special tile templates
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -94,7 +90,7 @@ The tile's badge will update accordingly.
 
 **Step 5: Putting it all together**
 
-The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://msdn.microsoft.com/library/windows/apps/hh779724) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://msdn.microsoft.com/library/windows/apps/hh779719) specifies the numerical value; tile properties control your tile's display name, color, and more.
+The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://docs.microsoft.com/previous-versions/windows/apps/hh779724(v=win.10)) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://docs.microsoft.com/previous-versions/windows/apps/hh779719(v=win.10)) specifies the numerical value; tile properties control your tile's display name, color, and more.
 
 ![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
 

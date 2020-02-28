@@ -1,16 +1,11 @@
 ---
-author: QuinnRadich
 title: Page layout for UWP apps
-description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In UWP apps, each page generally has navigation, command, and content elements.  
-ms.author: quradic
-ms.date: 3/17/2018
+description: When designing your app, the first thing to consider is the layout structure. This article covers the common structure of basic page layouts, including which UI elements you'll need, and where they should go on a page. In UWP apps, each page generally has navigation, command, and content elements.
+ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 localizationpriority: medium
 ---
-
 # Page layout
 
 In UWP apps, each [**Page**](https://docs.microsoft.com/uwp/api/Windows.UI.Xaml.Controls.Page) generally has navigation, command, and content elements. 
@@ -90,7 +85,7 @@ The [master/details](../controls-and-patterns/master-details.md) model consists 
 A [form](../controls-and-patterns/forms.md) is a group of controls that collect and submit data from users. Most, if not all apps, use a form of some sort for settings pages, log in portals, feedback hubs, account creation, or other purposes. 
 
 ## Sample apps
-To see how these patterns can be implemented, check out our [UWP sample apps](https://developer.microsoft.com/en-us/windows/samples):
+To see how these patterns can be implemented, check out our [UWP sample apps](https://developer.microsoft.com/windows/samples):
 - [BuildCast Video Player](https://github.com/Microsoft/BuildCast)
 - [Lunch Scheduler](https://github.com/Microsoft/Windows-appsample-lunch-scheduler)
 - [Coloring Book](https://github.com/Microsoft/Windows-appsample-coloringbook)

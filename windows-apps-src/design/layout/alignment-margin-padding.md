@@ -1,14 +1,11 @@
 ---
-author: QuinnRadich
 Description: Use alignment, margin, and padding properties to arrange the layout of elements on a page.
 title: Alignment, margin, and padding for layout
-ms.author: quradic
 ms.date: 03/19/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+ms.custom: RS5
 ---
 # Alignment, margin, padding
 
@@ -42,7 +39,7 @@ Alignment makes your UI look neat, organized, and balanced and can also be used 
 
 - Alignment can affect clipping within a layout panel. For example, with `HorizontalAlignment="Left"`, the right side of the element gets clipped if the content is larger than the ActualWidth.
 
-- Text elements use the [**TextAlignment**](https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.textalignment) property. Generally, we recommend using left-alignment, the default value. For more information about styling text, see [Typography](../style/typography.md).
+- Text elements use the [**TextAlignment**](https://docs.microsoft.com/uwp/api/windows.ui.xaml.textalignment) property. Generally, we recommend using left-alignment, the default value. For more information about styling text, see [Typography](../style/typography.md).
 
 ## Margin and padding
 Margin and padding properties keep UI from looking too cluttered or too sparse, and they can also make it easier to use certain inputs like pen and touch. Here's an illustration displaying margins and padding for a container and its content.
@@ -81,7 +78,7 @@ Here’s the same TextBox and Grid with Margin and Padding values on the TextBox
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="4" Width="200">
-    <TextBox Text="This is text in a TextBox." Margin="20" Padding="24,16"/>
+    <TextBox Text="This is text in a TextBox." Margin="20" Padding="16,24"/>
 </Grid>
 ```
 

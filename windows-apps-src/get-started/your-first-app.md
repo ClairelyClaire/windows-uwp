@@ -1,17 +1,12 @@
 ---
-author: QuinnRadich
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: Create a Universal Windows Platform (UWP) app for Windows 10 using your favorite programming language.
-ms.author: quradic
-ms.date: 1/25/2017
+ms.date: 01/25/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, first app, c#, c++, JavaScript
 ms.localizationpriority: medium
 ---
-
 # Create your first app
 
 Welcome to the [UWP platform](universal-application-platform-guide.md)! These tutorials will help you create your first UWP app in the language of your choice.
@@ -26,10 +21,9 @@ Use your .NET, WPF, or Silverlight skills to build apps using XAML with C#.
 
 If you want to learn the basics, or just refresh your memory, try reading these:
 
-* [C# Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850801)
-* [VB Fundamentals for Absolute Beginners](https://go.microsoft.com/fwlink/?linkid=850802)
-* [A Developer's Guide to Windows 10](https://go.microsoft.com/fwlink/?linkid=850804)
-* [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/)
+* [C# Fundamentals for Absolute Beginners](https://channel9.msdn.com/Series/CSharp-Fundamentals-for-Absolute-Beginners?l=Lvld4EQIC_2706218949)
+* [VB Fundamentals for Absolute Beginners](https://docs.microsoft.com/learn/?l=jqMOvLKbC_9206218965)
+* [A Developer's Guide to Windows 10](https://docs.microsoft.com/learn/)
 
 If you are ready to attempt something a little more fun than "Hello, World!", try out these tutorials:
 
@@ -45,8 +39,8 @@ Take advantage of your C++ programming expertise to build apps using Visual C++
 
 Learn more about C++ here:
 
-* [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
+* [C++ for UWP apps](https://docs.microsoft.com/cpp/cppcx/universal-windows-apps-cpp?view=vs-2019)
+* [C++ for Desktop apps](https://docs.microsoft.com/cpp/windows/desktop-applications-visual-cpp?view=vs-2019)
 
 If you are ready to attempt something a little more fun than "Hello, World!", try out these tutorials:
 
@@ -61,18 +55,13 @@ Take advantage of your web skills to build apps using HTML5, CSS3, and JavaScrip
 Extend your JavaScript and HTML skills beyond UWP to create web apps, or explore Virtual reality on the web with WebVR
 
 * [Microsoft Edge developer documentation](https://docs.microsoft.com/microsoft-edge/)
-* [Use WebVR with Microsoft Edge](https://docs.microsoft.com/en-us/microsoft-edge/webvr/)
+* [Use WebVR with Microsoft Edge](https://docs.microsoft.com/microsoft-edge/webvr/)
 
 Web apps can be easily packaged into the UWP framework as Hosted Web Apps, and promoted on the Microsoft Store.
 
-* [Hosted Web Apps](https://developer.microsoft.com/windows/bridges/hosted-web-apps)
+* [Hosted Web Apps](https://developer.microsoft.com/windows/pwa)
 * [Convert your web application to a UWP app](../porting/hwa-create-windows.md)
 
-Need to brush up on your web skills?
-
-* [JavaScript Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
-* [HTML5 & CSS3 Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
-* [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916)
 
 ## See Also
 

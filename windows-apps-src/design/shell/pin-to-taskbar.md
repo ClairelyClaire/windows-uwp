@@ -1,13 +1,9 @@
 ---
-author: mijacobs
 Description: You can programmatically pin your app to the taskbar,  bnd you can check if it's currently pinned.
 title: Pin your app to the taskbar
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, taskbar, taskbar manager, pin to taskbar, primary tile
 ms.localizationpriority: medium
 ---
@@ -36,7 +32,7 @@ The [TaskbarManager class](https://docs.microsoft.com/uwp/api/windows.ui.shell.t
 
 ## 1. Check whether the required APIs exist
 
-If your app supports older versions of Windows 10, you need to check whether the TaskbarManager class is available. You can use the  [ApiInformation.IsTypePresent method](https://docs.microsoft.com/en-us/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) to perform this check. If the TaskbarManager class isn't available, avoid executing any calls to the APIs.
+If your app supports older versions of Windows 10, you need to check whether the TaskbarManager class is available. You can use the  [ApiInformation.IsTypePresent method](https://docs.microsoft.com/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) to perform this check. If the TaskbarManager class isn't available, avoid executing any calls to the APIs.
 
 ```csharp
 if (ApiInformation.IsTypePresent("Windows.UI.Shell.TaskbarManager"))

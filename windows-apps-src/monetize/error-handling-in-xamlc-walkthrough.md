@@ -1,18 +1,16 @@
 ---
-author: mcleanbyron
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
 description: Learn how to catch AdControl errors in your app.
 title: Error handling in XAML/C# walkthrough
-ms.author: mcleans
-ms.date: 05/11/2018
+ms.date: 02/18/2020
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, ads, advertising, error handling, XAML, c#
 ms.localizationpriority: medium
 ---
-
 # Error handling in XAML/C# walkthrough
+
+>[!WARNING]
+> As of June 1, 2020, the Microsoft Ad Monetization platform for Windows UWP apps will be shut down. [Learn more](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/db8d44cb-1381-47f7-94d3-c6ded3fea36f/microsoft-ad-monetization-platform-shutting-down-june-1st?forum=aiamgr)
 
 This walkthrough demonstrates how to catch ad-related errors in your app. This walkthrough uses an [AdControl](https://docs.microsoft.com/uwp/api/microsoft.advertising.winrt.ui.adcontrol) to display a banner ad, but the general concepts in it also apply to interstitial ads and native ads.
 
@@ -68,10 +66,10 @@ These examples assume that you have a XAML/C# app that contains an **AdControl**
     ```
 
 4.  Build and run the project. After the app is running, you will see a message similar to the one below in the **Output** window of Visual Studio.
-    ```
+    ```json
     AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests must use the same application ID within a single application (0, d25517cb-12d4-4699-8bdc-52040c712cab) ErrorCode: ClientConfiguration
     ```
 
 ## Related topics
 
-* [Advertising samples on GitHub](http://aka.ms/githubads)
+* [Advertising samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Advertising)

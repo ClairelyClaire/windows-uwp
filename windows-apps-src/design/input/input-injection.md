@@ -1,18 +1,13 @@
 ---
-author: Karl-Bridge-Microsoft
 Description: Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP apps.
 title: Simulate user input through input injection
 label: Input injection
 template: detail.hbs
 keywords: device, digitizer, input, interaction, injection
-ms.author: kbridge
 ms.date: 02/08/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 ms.localizationpriority: medium
 ---
-
 # Simulate user input through input injection
 
 Simulate and automate user input from devices such as keyboard, mouse, touch, pen, and gamepad in your UWP applications.
@@ -49,7 +44,8 @@ In this example, we demonstrate how to use the input injection APIs ([Windows.UI
 1. First, we set up the UI (MainPage.xaml).
 
     We have two Grid areas (one for mouse input and one for injected touch input), each with four buttons.
-       > [!NOTE] The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
+      > [!NOTE] 
+      > The Grid background must be assigned a value (`Transparent`, in this case), otherwise pointer events are not detected.
 
     When any mouse clicks are detected in the input area, a corresponding touch event is injected into the input injection area. Button clicks from inject input are reported in the title area.
 
@@ -168,11 +164,11 @@ In this example, we demonstrate how to use the input injection APIs ([Windows.UI
     
     In this snippet, we declare our global objects and declare listeners for pointer events ([AddHandler](https://docs.microsoft.com/uwp/api/windows.ui.xaml.uielement.addhandler)) within the mouse input area that might be marked as handled in the button click events.
 
-    The [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) object represents the virtual input device for sending the input data.
+    The [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) object represents the virtual input device for sending the input data.
 
     In the `ContainerInput_PointerPressed` handler we call the touch injection function.
 
-    In the `ContainerInput_PointerReleased` handler, we call UninitializeTouchInjection to shut down the [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) object.
+    In the `ContainerInput_PointerReleased` handler, we call UninitializeTouchInjection to shut down the [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) object.
 
     ```csharp
     public sealed partial class MainPage : Page
@@ -249,7 +245,7 @@ In this example, we demonstrate how to use the input injection APIs ([Windows.UI
     ```
 3. Here's the touch input injection function.
 
-    First, we call [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) to instantiate the [InputInjector](https://docs.microsoft.com/api/windows.ui.input.preview.injection.inputinjector) object.
+    First, we call [TryCreate](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate) to instantiate the [InputInjector](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector) object.
 
     Then, we call [InitializeTouchInjection](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection) with an [InjectedInputVisualizationMode](https://docs.microsoft.com/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode) of `Default`.
 

@@ -1,18 +1,13 @@
 ---
-author: andrewleader
 Description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
 title: Send a local toast notification from desktop C++ WRL apps
 label: Send a local toast notification from desktop C++ WRL apps
 template: detail.hbs
-ms.author: mijacobs
-ms.date: 03/7/2018
+ms.date: 03/07/2018
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 ---
-
 # Send a local toast notification from desktop C++ WRL apps
 
 Desktop apps (both Desktop Bridge and classic Win32) can send interactive toast notifications just like Universal Windows Platform (UWP) apps. However, there are a few special steps for desktop apps due to the different activation schemes and the potential lack of package identity if you're not using the Desktop Bridge.
@@ -50,7 +45,7 @@ Include the compat library header file, and the header files and namespaces rela
 
 ```cpp
 #include "DesktopNotificationManagerCompat.h"
-#include "NotificationActivationCallback.h"
+#include <NotificationActivationCallback.h>
 #include <windows.ui.notifications.h>
 
 using namespace ABI::Windows::Data::Xml::Dom;
@@ -61,7 +56,7 @@ using namespace Microsoft::WRL;
 
 ## Step 4: Implement the activator
 
-You must impelment a handler for toast activation, so that when the user clicks on your toast, your app can do something. This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed). This class can be placed anywhere in your project.
+You must implement a handler for toast activation, so that when the user clicks on your toast, your app can do something. This is required for your toast to persist in Action Center (since the toast could be clicked days later when your app is closed). This class can be placed anywhere in your project.
 
 Implement the **INotificationActivationCallback** interface as seen below, including a UUID, and also call **CoCreatableClass** to flag your class as COM creatable. For your UUID, create a unique GUID using one of the many online GUID generators. This GUID CLSID (class identifier) is how Action Center knows what class to COM activate.
 
@@ -217,7 +212,7 @@ if (SUCCEEDED(hr))
     {
         // Create the notification itself (using helper method from compat library)
         ComPtr<IToastNotification> toast;
-        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc, &toast);
+        hr = DesktopNotificationManagerCompat::CreateToastNotification(doc.Get(), &toast);
         if (SUCCEEDED(hr))
         {
             // And show it!
@@ -394,7 +389,7 @@ if (SUCCEEDED(hr))
 
 ## Step 10: Deploying and debugging
 
-To deploy and debug your Desktop Bridge app, see [Run, debug, and test a packaged desktop app](/porting/desktop-to-uwp-debug.md).
+To deploy and debug your Desktop Bridge app, see [Run, debug, and test a packaged desktop app](/windows/uwp/porting/desktop-to-uwp-debug).
 
 To deploy and debug your classic Win32 app, you must install your app through the installer once before debugging normally, so that the Start shortcut with your AUMID and CLSID is present. After the Start shortcut is present, you can debug using F5 from Visual Studio.
 
@@ -415,7 +410,7 @@ If you get numerous `unresolved external symbol` compilation errors, you likely 
 
 If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows 10 before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric toasts.
 
-Windows 8 introduced toast notifications, but used the [legacy toast templates](https://docs.microsoft.com/en-us/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
+Windows 8 introduced toast notifications, but used the [legacy toast templates](https://docs.microsoft.com/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
 
 | OS | ToastGeneric | COM activator | Legacy toast templates |
 | -- | ------------ | ------------- | ---------------------- |

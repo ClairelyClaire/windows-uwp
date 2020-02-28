@@ -1,14 +1,10 @@
 ---
-author: andrewleader
 Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
 title: Send a local tile notification
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 template: detail.hbs
-ms.author: mijacobs
 ms.date: 05/19/2017
 ms.topic: article
-ms.prod: windows
-ms.technology: uwp
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -202,7 +198,7 @@ Periodic or push notifications can only add new notifications or replace existin
 
 **Using the notification queue**
 
-Now that you have done your first tile update, you can expand the functionality of the tile by enabling a [notification queue](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
+Now that you have done your first tile update, you can expand the functionality of the tile by enabling a [notification queue](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10)).
 
 **Other notification delivery methods**
 
@@ -289,7 +285,7 @@ var notification = new TileNotification(doc);
 * [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/)
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
 * [**Windows.UI.Notifications namespace**](https://docs.microsoft.com/uwp/api/Windows.UI.Notifications)
-* [How to use the notification queue (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [How to use the notification queue (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/hh868234(v=win.10))
 * [Delivering notifications](choosing-a-notification-delivery-method.md)
  
 
